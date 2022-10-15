@@ -1,42 +1,41 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 300,
-    "width": 500,
-    "title": "Australia-wide energy consumption from 2003-2021 (PJ)",
-    "layer": [{"data": {"url": "https://raw.githubusercontent.com/ReynaldKusumahadi/FIT3179-Data-Visualisation-2/main/Australia%20Nationwide%20Energy%20Data%202003-2021%20cleaned.csv"},
-    "transform": [{"filter": "datum.Year >=2003 && datum.Year <= 2021"}],
-    "encoding": {
-      "x": {"field": "Year", "type": "quantitative"},
-      "y": {"field": "Energy consumption (PJ)", "type": "quantitative"},
-      "stroke": {"value": "#bd0026"},
-      "tooltip": [{"field": "Year", 
-                   "type": "quantitative", 
-                   "title": "Year"}, 
-                   {"field": "Energy consumption (PJ)", 
-                   "type": "quantitative", 
-                   "title": "Energy consumption (PJ)"}]
-    }, "mark": {"type": "line", "point": true}},
-        {
-        "data": {
-           "values": [{}]
-        },
-        "encoding": {
-          "y": {"datum": 6188.1},
-          "color": {"value": "red"}
-        },
-        "layer": [{
-          "mark": "rule"
-        }, {"mark": {
-          "type": "text",
-          "align": "right",
-          "baseline": "bottom",
-          "dx": -2,
-          "dy": -2,
-          "x": "width",
-          "text": "Highest recorded nationwide energy consumed was in 2019 at 6188.1 Petajoules",
-          "color": {"value": "red"},
-          "fontStyle": "bold"
-        }}]
-      }]
-  }
-  
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 300,
+  "width": 600,
+  "title": "Australia-wide energy consumption per capita from 2003-2021 (GJ/person)",
+  "layer": [{"data": {"url": "https://raw.githubusercontent.com/ReynaldKusumahadi/FIT3179-Data-Visualisation-2/main/Australia%20Nationwide%20Energy%20Data%202003-2021%20cleaned.csv"},
+  "transform": [{"filter": "datum.Year >=2003 && datum.Year <= 2021"}],
+  "encoding": {
+    "x": {"field": "Year", "type": "quantitative"},
+    "y": {"field": "Energy consumption per capita (GJ/person)", "type": "quantitative", "scale": {"domain": [200, 300]}},
+    "stroke": {"value": "#bd0026"},
+    "tooltip": [{"field": "Year", 
+                 "type": "quantitative", 
+                 "title": "Year"}, 
+                 {"field": "Energy consumption per capita (GJ/person)", 
+                 "type": "quantitative", 
+                 "title": "Energy consumption per capita (GJ/person)"}]
+  }, "mark": {"type": "line", "point": true}},
+      {
+      "data": {
+         "values": [{}]
+      },
+      "encoding": {
+        "y": {"datum": 275.2},
+        "color": {"value": "red"}
+      },
+      "layer": [{
+        "mark": "rule"
+      }, {"mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -2,
+        "dy": -2,
+        "x": "width",
+        "text": "Highest nationwide energy consumed per capita was in 2007 at 275.2 GJ/person",
+        "color": {"value": "red"},
+        "fontStyle": "bold"
+      }}]
+    }]
+}
