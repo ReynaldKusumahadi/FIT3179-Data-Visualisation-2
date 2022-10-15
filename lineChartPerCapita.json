@@ -7,7 +7,7 @@
   "transform": [{"filter": "datum.Year >=2003 && datum.Year <= 2021"}],
   "encoding": {
     "x": {"field": "Year", "type": "quantitative"},
-    "y": {"field": "Energy consumption per capita (GJ/person)", "type": "quantitative"},
+    "y": {"field": "Energy consumption per capita (GJ/person)", "type": "quantitative", "scale": {"domain": [200, 300]}},
     "stroke": {"value": "#bd0026"},
     "tooltip": [{"field": "Year", 
                  "type": "quantitative", 
