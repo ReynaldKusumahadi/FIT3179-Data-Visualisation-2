@@ -1,2 +1,2 @@
 var myStackedArea = "stackedAreaChart.json";
-vegaEmbed("#StackedAreaChart", myStackedArea);
+vegaEmbed("#StackedAreaChart", myStackedArea, {"actions": false});

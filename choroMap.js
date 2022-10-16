@@ -1,2 +1,2 @@
 var myMap = "choroMap.json";
-vegaEmbed("#ChoroMap", myMap);
+vegaEmbed("#ChoroMap", myMap, {"actions": false});

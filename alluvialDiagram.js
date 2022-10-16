@@ -1,2 +1,2 @@
 var myAlluvialDiagram = "alluvialDiagram.json";
-vegaEmbed("#AlluvialDiagram", myAlluvialDiagram);
+vegaEmbed("#AlluvialDiagram", myAlluvialDiagram, {"actions": false});

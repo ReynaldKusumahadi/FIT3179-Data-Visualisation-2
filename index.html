@@ -6,8 +6,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
+    <!--Importing pure.css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
     
+    <!--Importing the css file-->
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
     <script src="choroMap.js"></script>
     <script src="lineCharts.js"></script>
     <script src="alluvialDiagram.js"></script>
@@ -16,25 +20,198 @@
 </head>
 <body>
 
-    <h1>How does Australia's Energy Consumption progress over time?</h1>
-    <div id="ChoroMap"></div>
-    <div id="LineChart"></div>
- 
-    <div id="LineChartPerCapita"></div>
-    <h1>How much does Australia consume each type of fuel?</h1>
-    <div id="StackedAreaChart"></div>
-       
-    <p>From the area chart above, Australia's Energy is dominated by 
-    </br>Fossil Fuels by a landslide
-    </br>
-    </p>
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+            <h1>Australian Energy Consumption</h1>
+        </div>
+    </div>
 
-    <h1>How does the Australian Energy Flow look like?</h1>
-    <p>This Alluvial Diagram shows how the energy flow looks like 
-    </br>in Australia:
-    </p>
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="ChoroMap" class="viz-container"></div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="LineChart" class="viz-container"></div>
+        </div>
+    </div>
+    
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <h3>How does Australia's Energy Consumption progress over time?</h3>
+            
+            <p>In this section, the line charts show the trend of
+            </br>Australian Energy Consumption as a whole in absolute and relative 
+            </br>values (Energy consumption per capita), and the choropleth map shows
+            </br>how much energy is consumed per capita for each state. 
+            </br>Including both Nationwide and Statewise data is a must because
+            </br>a country following a general trend does not imply all 
+            </br>its states will follow suit.
+            </p>
 
-    <div id="AlluvialDiagram"></div>
+            <p>Although Australian Energy consumption shows an increasing trend in terms
+            </br>of absolute values, there is a depleting trend in terms 
+            </br>of Energy Consumption per capita (in GJ/person). According to renewedeconomy.com.au,
+            </br>the notable main factors contributing to the decrease of Energy
+            </br>Consumption per capita are the influence of energy efficiency programs 
+            </br>and the economy moving away from energy-intensive industries. (Reference this)
+            </p>
+
+            <p>If we are scrutinising statewise data, the state with the
+            </br>most notable change of Energy Consumption per capita is <b>Northern</b>
+            </br><b>Territory.</b> Although Northern Territory only has consumed 281.5 Gigajoules of
+            </br> energy per person in 2003, it has more than doubled 
+            </br>the amount of energy consumed in 2021 at 582.4 Gigajoules 
+            </br>of energy per person, which defies the trend of Australian 
+            </br>Energy Consumption per capita.
+            </p>
+
+            <p>To explore more about the statewise trend, I have <b>included</b> 
+            </br><b>a time slider</b> in the choropleth map to see how 
+            </br>Energy Consumption has played out on each Australian state. Drag
+            </br>the slider to find out more!
+            </p>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="LineChartPerCapita" class="viz-container"></div>
+        </div>
+    </div>
+    
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <h3>How much does Australia consume each type of fuel?</h3>
+            <p>In general, Australia's fuel consumption is dominated by Fossil Fuels,
+            </br>which makes renewable energy consumption numbers insignificant. However,
+            </br>as time elapses, the proportion of energy consumed by Fossil Fuels has
+            </br>been declining, as there is an Australian Government Scheme called
+            </br>the <b>Renewable Energy Target</b>. Its goal is to reduce the electricity sector's
+            </br>greenhouse gas emissions and enhance electricity generation from sustainable and
+            </br>renewable sources. (Reference this)
+            </p>
+            
+            <p>In terms of <b>fossil fuels</b>, <b>Refinery Input</b> was the dominant 
+            </br>energy source in 2003, as 1629.5 Petajoules of Refinery input
+            </br>was consumed, which is greater than Black Coal consumption on
+            </br>that year. However, it was dethroned by <b>Black Coal</b> in 2005.
+            </br>On that year, consumption of black coal is recorded at 1554.4 Petajoules,
+            </br>compared to <b>Refinery Input's</b> consumption of 1543.7 Petajoules on that
+            </br>year. Nevertheless, Black Coal's reign as the most dominant fossil fuel consumed
+            </br>ended in 2011, as <b>Natural Gas</b> regains its throne back as the most dominant
+            </br>fossil fuel consumed at 1632.8 Petajoules, compared to <b>Black Coal's</b> 
+            </br>consumption of 1402.7 Petajoules on that year.
+            </p>
+
+            <p>However, <b>Natural Gas</b> consumption has been increasing steadily over time,
+            </br>as it became the most dominant fossil fuel being consumed 
+            </br>by Australians in 2015 with 1409.1 Petajoules, and the likelihood of
+            </br>Natural Gas being the most dominant fossil fuel being consumed
+            </br>in the future is high because it is the only fossil fuel that shows
+            </br>an increasing trend.
+            </p>
+
+            <p>In terms of the <b>renewables</b>, <b>Wood, woodwaste</b> was the dominant
+            </br>energy source in 2003, with 105.4 Petajoules of Wood, woodwaste being
+            </br>consumed at that time. Despite that, it is losing its dominance over
+            </br>time because the amount of <b>Wood, woodwaste</b> has been following
+            </br>a declining trend, while other renewable energy sources, such as 
+            </br><b>Solar Hotwater</b> and <b>Liquid/Gas biofuels</b> has increased its 
+            </br>consumption as time goes by.
+
+            <p>This is because in 2003, the amount of <b>Solar Hotwater</b> 
+            </br>consumed in Australia is only 2.8 Petajoules. However, as time
+            </br>goes by, it eventually broke the 10 Petajoules milestone in 2010,
+            </br>in which 10.5 Petajoules of energy was consumed, and it eventually
+            </br>reached 19.7 Petajoules of energy in 2021. On the other hand, the
+            </br>amount of <b>Liquid/Gas biofuels</b> consumed in Australia was only
+            </br>11.2 Petajoules in 2003. Furthermore, it broke the 20 Petajoules milestone
+            </br>in 2010, in which Australians consumed 22.5 Petajoules in 2010. After reaching
+            </br>that milestone, the amount of <b>Liquid/Gas biofuels</b> consumed in Australia
+            </br>maintains to be at least 20 Petajoules, but has not reached 30 Petajoules yet.
+            </br>Therefore, there is potential that <b>Solar Hotwater</b> and <b>Liquid/Gas biofuels</b>
+            </br>will be the most dominant renewable energy source consumed in the future.
+            </p>
+
+            </p>
+            <p>Alongside the stacked area chart, I have included a <b>brushing</b> 
+            </br><b>interactivity feature</b> in the <b>line chart below the stacked area</b>
+            </br><b>chart</b>. Left-Click one part of the line chart, and drag left/right 
+            </br>until you release your mouse to see the section of the time shown.
+            </br>in the area chart. 
+            </p>
+
+        </div>
+        <div class="pure-u-1-2">
+            <div id="StackedAreaChart" class="viz-container"></div>
+            <p><b>Note:</b></p>
+            <p><b>Fossil Fuels:</b></p>
+            <ul>
+                <li>Black Coal</li>
+                <li>Brown Coal</li>
+                <li>Natural Gas</li>
+                <li>Refinery Input</li>
+            </ul>
+
+            <p><b>Renewables:</b></p>
+            <ul>
+                <li>Bagasse</li>
+                <li>Liquid/gas biofuels</li>
+                <li>Solar hotwater</li>
+                <li>Wood, woodwaste</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <h3>How does the Australian Energy Flow look like?</h3>
+            <p>According to the alluvial diagram shown on the right side,
+            </br>most of the energy types that Australia used are produced
+            </br>locally, with a minuscule proportion of imported energy. This is 
+            </br>inevitable because Australia has a vast number of energy reserves.
+            </p>
+
+            <p>Firstly, <b>Black Coal</b> is an EDR, which is an <b>Economic</b>
+            </br><b>Demonstrated Resource</b>. According to <b>Australian Parliament House</b>,
+            </br>an <b>Economic Demonstrated Resource</b> is a resource in which profitable
+            </br>extraction or production under defined investment assumptions is possible. (Reference this)
+            </br>Most of Australia's Black Coal EDR is dominated by Queensland 
+            </br>and New South Wales. Some of them are located in
+            </br>Tasmania, Southern Australia, and Western Australia. Some notable sites that
+            </br>produce <b>Black Coal</b> are the Hail Creek Mine in Queensland, 
+            </br>Bowen Basin in Queensland, which hails the largest coal reserves 
+            </br>in the country, (Reference this) and the Sydney Basin in New 
+            </br>South Wales.
+            </p>
+
+            <p><b>Brown Coal</b> is mainly produced in one state, which is 
+            </br>Victoria, in which Latrobe Valley contributes to more than 90%
+            </br>of Australia's <b>Brown Coal</b> production. Some notable Brown
+            </br>coal mines in Australia are the <b>Loy Yang Mine</b> and 
+            </br>the <b>Yallourn Mine</b>. (Reference this) As production of Brown Coal is concentrated
+            </br>in only one state, it is likely that there would 
+            </br>be less <b>Brown Coal</b> produced than <b>Black Coal</b>
+            </p>
+
+            <p>However, Australia does not consume all of its own <b>Natural</b> 
+            </br><b>Gas</b> and <b>Crude Oil</b>, as it still imports that energy source from 
+            </br>other countries, despite having a handful of Natural Gas reserves and Crude Oil 
+            </br>Refineries in the country. Some notable Natural Gas Reserves in 
+            </br>Australia include Bass Strait in Victoria and Tasmania, Offshore Northwest
+            </br>shelf in Western Australia, and the Darling Downs in Southern Queensland. (Reference this)
+            </p>
+
+            <p>Finally, Renewable Energy production in Australia is entirely produced indigenously,
+            </br>such as solar hotwater and liquid/gas biofuels. As Australia has an abundance of sunshine,
+            </br>wind, and natural attributes, it is a great country for producing renewable energy, which
+            </br>implies that Australia does not need to import renewable energy from other countries. (Reference this)
+
+            </p>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="AlluvialDiagram" class="viz-container"></div>
+        </div>
+    </div>
+
+    
 
 
     
